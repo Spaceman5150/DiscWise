@@ -6,6 +6,8 @@ DiscWise is a free Linux desktop app. It was built by someone who wanted to arch
 
 It is written to be usable by someone who isn't a computer person. Nearly every button, box and table column has a tooltip: hold your mouse over it and a short note pops up explaining what it does and how to use it. The tooltips guide you along the path, help you make choices with confidence, and explain how each step fits into the bigger workflow, so you rarely need to look anything up. The wording is plain, the results are big, and nothing changes on your drive until you say so.
 
+**The tools in DiscWise are modular, and they are useful for music collections of any size, from a simple tidy-up to a full archive.** The workflow is built around archiving FLAC, but you never have to use all of it. You might only want one thing from it: a better cover for a single album, or clean tags on a huge folder of MP3s. The cover art tools find a new picture online and replace the old one, and they work on FLAC and MP3 alike. The Tag and Folder Cleaner removes spam like "(2015 Remaster)" stuck on every song, and it works on FLAC and MP3, whether your collection is a few albums or thousands of songs. Search Library finds what you own across both formats, and the packing list puts MP3s on their own discs. Only two steps are specific to FLAC: the Verifier, which checks that a file really is lossless, and the Converter, which turns FLAC into MP3. Use one tool, a few of them, or the whole workflow from download to burned disc.
+
 <p align="center"><img src="screenshots/03_flac_check_verified.png" width="800" alt="The FLAC Verifier showing all 114 albums checked and green"><br><em>The FLAC Verifier: every album checked, with green rows meaning nothing to do.</em></p>
 
 ---
@@ -199,9 +201,7 @@ Every part of the workflow has been used on a real library of well over a hundre
 
 ## License
 
-Copyright (C) 2026 Spaceman.
-
-DiscWise is free software, released under the GNU General Public License v3.0. You may use it, change it and share it, and if you share a changed version it must stay open under the same license. See the `LICENSE` file for the full text. It builds on mutagen and other GPL-licensed tools, which is why the GPL is the natural fit.
+*(To be decided. Several pieces of the toolchain, including mutagen, are GPL, so GPL-compatible is the natural choice.)*
 
 ## Thanks
 
