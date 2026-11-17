@@ -4005,12 +4005,25 @@ class DiscPlannerGUI(tk.Tk):
                 panel.destroy()
                 self.burn_panel = None
             if self._burn_placeholder is None or not self._burn_placeholder.winfo_exists():
-                self._burn_placeholder = ttk.Label(
-                    self.burn_host, foreground=FG_MUTED, wraplength=760, justify="left",
-                    text="There's no packing-list database yet. Generate a packing list on the first tab "
-                         "(or put the path to an existing archived_catalog.db in its Database field), "
-                         "then come back here.")
-                self._burn_placeholder.pack(anchor="w", padx=14, pady=14)
+                # A big, centred message where the disc table will appear, so it can't be missed.
+                box = ttk.Frame(self.burn_host)
+                head = ttk.Label(box, text="No packing list yet", foreground=ACCENT_LIGHT,
+                                 font=("", 24, "bold"), justify="center", anchor="center")
+                head.pack(pady=(0, 14))
+                body = ttk.Label(box, foreground=FG_TEXT, font=("", 16), justify="center", anchor="center",
+                                 wraplength=640,
+                                 text="Generate a packing list on the first tab, or point its Database "
+                                      "field at an existing archived_catalog.db, then come back here.")
+                body.pack()
+
+                def _fit(event=None, host=self.burn_host, label=body):
+                    try:
+                        label.configure(wraplength=max(300, host.winfo_width() - 160))
+                    except tk.TclError:
+                        pass
+                self.burn_host.bind("<Configure>", _fit, add="+")
+                box.place(relx=0.5, rely=0.45, anchor="center")
+                self._burn_placeholder = box
             return
         if self._burn_placeholder is not None and self._burn_placeholder.winfo_exists():
             self._burn_placeholder.destroy()

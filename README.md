@@ -6,8 +6,6 @@ DiscWise is a free Linux desktop app. It was built by someone who wanted to arch
 
 It is written to be usable by someone who isn't a computer person. Nearly every button, box and table column has a tooltip: hold your mouse over it and a short note pops up explaining what it does and how to use it. The tooltips guide you along the path, help you make choices with confidence, and explain how each step fits into the bigger workflow, so you rarely need to look anything up. The wording is plain, the results are big, and nothing changes on your drive until you say so.
 
-**The tools in DiscWise are modular, and they are useful for music collections of any size, from a simple tidy-up to a full archive.** The workflow is built around archiving FLAC, but you never have to use all of it. You might only want one thing from it: a better cover for a single album, or clean tags on a huge folder of MP3s. The cover art tools find a new picture online and replace the old one, and they work on FLAC and MP3 alike. The Tag and Folder Cleaner removes spam like "(2015 Remaster)" stuck on every song, and it works on FLAC and MP3, whether your collection is a few albums or thousands of songs. Search Library finds what you own across both formats, and the packing list puts MP3s on their own discs. Only two steps are specific to FLAC: the Verifier, which checks that a file really is lossless, and the Converter, which turns FLAC into MP3. Use one tool, a few of them, or the whole workflow from download to burned disc.
-
 <p align="center"><img src="screenshots/03_flac_check_verified.png" width="800" alt="The FLAC Verifier showing all 114 albums checked and green"><br><em>The FLAC Verifier: every album checked, with green rows meaning nothing to do.</em></p>
 
 ---
@@ -124,7 +122,15 @@ DiscWise is Linux-first and is developed and used on Ubuntu. Other Linux distrib
 3. Click **Install** and type your password when asked. Anything else DiscWise needs is added for you.
 4. Find **DiscWise** in your applications menu.
 
-No typing in a terminal is needed. To update later, double-click the newer `.deb`. To remove DiscWise, uninstall it in your software center. Your music and your DiscWise settings are not touched.
+No typing in a terminal is needed to install it. To update later, double-click the newer `.deb`.
+
+**To remove DiscWise**, open a terminal and run:
+
+```
+sudo apt remove discwise
+```
+
+(Some software centers also list DiscWise and let you remove it there, but the command always works.) Your music and your DiscWise settings are not touched.
 
 If double-clicking opens something other than your software center, right-click the file, choose **Open With**, and pick your software center (Discover or Software Install).
 
@@ -164,7 +170,7 @@ python3 disc_planner_gui.py
 
 ## Where things are kept
 
-DiscWise keeps its own files (databases, checklists, backups, spectrograms) together in one **DiscWise** folder beside your music folders, so your music folders stay clean. Settings are remembered between sessions in a small file next to the program.
+DiscWise keeps its own files (databases, checklists, backups, spectrograms) together in one **DiscWise** folder beside your music folders, so your music folders stay clean. Settings are remembered between sessions in a small file. When you installed DiscWise from the `.deb`, that file and the program's logs are kept in `~/.local/share/discwise`; when you run it from a folder you can write to, they sit next to the program.
 
 ## A promise about your music
 
